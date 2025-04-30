@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get "rake/db_seed"
+  resources :configurations, only: [] do
+    get :android_v1, on: :collection
+  end
+
   root to: "chats#index"
   resources :chat_users
   resources :chats, param: :token do
@@ -12,6 +17,8 @@ Rails.application.routes.draw do
       delete :sign_out
     end
   end
+
+  resources :notification_tokens, only: :create
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

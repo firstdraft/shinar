@@ -14,10 +14,9 @@ gem "stimulus-rails"               # Hotwire's modest JavaScript framework
 gem "turbo-rails"                  # Hotwire's SPA-like page accelerator
 
 # Rails services
-gem "redis", "~> 4.0"                  # Redis client
-gem "hiredis"                       # Faster Redis client
 gem "solid_cache"                  # Database-backed adapter for Rails.cache
 gem "solid_queue"                  # Database-backed adapter for Active Job
+gem "solid_cable"                  # Database-backed adapter for Action Cable
 
 # DevOps
 gem "kamal", require: false        # Docker container deployment
@@ -45,6 +44,9 @@ gem "rqrcode"                      # QR code generation
 gem "simple_form"                  # Simplified form builder
 gem "strip_attributes"             # Remove whitespace from model attributes
 gem "validate_url"                 # URL validation
+gem "noticed"                      # Push notifications
+gem "apnotic"                      # Communicate with APN for iOS push notifications
+gem "googleauth"                   # Communicate with Google for Android push notifications
 
 group :development, :test do
   gem "brakeman", require: false   # Security vulnerability scanner
